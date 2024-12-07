@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="final.css">
+    <link rel="stylesheet" href="print.css">
+    <style>
+        body {
+            background-image: url(../Final_image/p4.png); 
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+        form {
+            margin-top: 20px;
+        }
+        button[type="submit"] {
+            background-color: #5C7FA3;
+            color: white;
+            padding: 20px 40px; /* Increase padding for a larger button */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 20px; /* Increase font size for better visibility */
+            
+            /* Positioning */
+            position: absolute;
+            right: 50px;
+            top: 20px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #344873;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Styling for text field labels */
+        label {
+            display: inline-block;
+            width: 120px; /* Adjust width as needed */
+            font-weight: bold;
+            margin-right: 10px; /* Add some space between label and input field */
+        }
+    </style>
+    <script>
+        function submitReservation() {
+            var nationalID = document.getElementById("nationalID").value;
+            var fName = document.getElementById("fName").value;
+            var lName = document.getElementById("lName").value;
+            var dob = document.getElementById("dob").value;
+            var email = document.getElementById("email").value;
+            var info = document.getElementById("info").value;
+            var gender = document.querySelector('input[name="gender"]:checked').value; // Get selected gender
+            var passportImage = document.getElementById("passportImage").files[0]; // Get the uploaded file
+
+            // Display the uploaded passport image in console (or handle it as needed)
+            console.log(passportImage);
+
+            var table = document.getElementById("reservationTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            var cell5 = newRow.insertCell(4);
+            var cell6 = newRow.insertCell(5);
+            var cell7 = newRow.insertCell(6); // Cell for gender
+            cell1.innerHTML = nationalID;
+            cell2.innerHTML = fName;
+            cell3.innerHTML = lName;
+            cell4.innerHTML = dob;
+            cell5.innerHTML = email;
+            cell6.innerHTML = info;
+            cell7.innerHTML = gender;
+
+            // If a passport image is uploaded, show a preview
+            if (passportImage) {
+                var imgPreview = document.createElement("img");
+                imgPreview.src = URL.createObjectURL(passportImage);
+                imgPreview.style.width = "100px"; // You can adjust the size as needed
+                newRow.appendChild(imgPreview);
+            }
+        }
+    </script>
+</head>
+<body>
+    <section id="hero">
+        <div class="hero">
+            <nav>
+                <h2 class="logo"><a href="final.html"><span class="idi">Cam</span><span>Web2</span></a></h2>
+                <ul>
+                    <li><a href="final.html">Home</a></li>
+                    <li><a href="final.html#about">About Us</a></li>
+                    <li><a href="reagister.html">Register</a></li>
+                    <li><a href="more.html">More info</a></li>
+                    <li><a href="contect.html">Contact</a></li>
+                </ul>
+                <a href="https://www.facebook.com/mpwt.gov.kh?mibextid=JRoKGi" class="btn" target="_blank">Facebook</a>
+            </nav>
+        </div>
+        <div class="hero container">
+            <div>
+                <h1>Hello, <span></span></h1>
+                <h1>This is <span>Register</span> page</h1>
+                <p></p>
+                <p><br><em>Get your Cambodia driver license now!!</em></p>
+                <a href="#register" type="button" class="cta">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="register" id="register">
+        <div class="main">
+            <div class="register-txt">
+                <br><br><br><br><br><br>
+                <h1>Register</h1>
+                <h5> Get your <span> International driver license </span> examination </h5><br>
+                <main>
+                    <br>
+                    <p><span class="resort">Note***</span> write down your information in the Info text area.</p>
+                    <form id="reagister-txt">
+                        <div>
+                            <label for="nationalID">National ID / Passport :&emsp;&nbsp;&nbsp; </label>
+                            <input type="text" name="nationalID" id="nationalID">
+                        </div>
+                    
+                        <div>
+                            <label for="fName">First Name :&emsp;&nbsp;&nbsp; </label>
+                            <input type="text" name="fName" id="fName">
+                        </div>
+                    
+                        <div>
+                            <label for="lName">Last Name :&emsp;&nbsp;&nbsp; </label>
+                            <input type="text" name="lName" id="lName">
+                        </div>
+                    
+                        <!-- Gender field added here -->
+                        <div>
+                            <label for="gender">Gender :&emsp;&nbsp;&nbsp; </label>
+                            <input type="radio" id="male" name="gender" value="Male">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="Female">
+                            <label for="female">Female</label>
+                        </div>
+                    
+                        <div>
+                            <label for="dob">Date of birth:&emsp;&emsp; </label>
+                            <input type="date" name="dob" id="dob">
+                        </div>
+                        <div>
+                            <label for="email">Email :&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div>
+                            <label for="info">Phone Number :&emsp; </label>
+                            <textarea name="info" id="info" rows="2"></textarea>
+                        </div>
+
+                        <!-- New option for uploading passport image -->
+                        <div>
+                            <label for="passportImage">Upload Passport Image:&emsp;&nbsp;&nbsp; </label>
+                            <input type="file" name="passportImage" id="passportImage" accept="image/*">
+                        </div>
+                    </form>
+                    
+                    <br><br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <button type="button" onclick="submitReservation()">Submit</button>            
+                    <br><br><br>
+                    <h3>Recent Submission</h3>
+                    <table id="reservationTable">
+                        <thead>
+                            <tr>
+                                <th>National ID / Passport</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Date of Birth</th> 
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Gender</th>
+                                <th>Passport Image</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Reservation data will be added dynamically here -->
+                        </tbody>
+                    </table>
+                    <br><br><br><br><br><br><br><br><br><br><br><br>
+                </main>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+

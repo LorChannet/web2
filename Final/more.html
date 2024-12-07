@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>more</title>
+    <link rel="stylesheet" href="final.css">
+    <link rel="stylesheet" href="print.css">
+    <style>
+        body {
+            background-image: url(../Final_image/p5.png); 
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .box {
+            width: 30%;
+            text-align: center;
+            margin: 0 auto;
+            box-shadow: 0px 0px 10px rgba(0, 0.3, 0, 0.15); /* Add shadow to the box */
+            padding: 20px; /* Add some padding */
+        }
+        .box img {
+            width: 180px; /* Adjust image width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Add shadow to the image */
+        }
+        button {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <section id="hero">
+        <div class="hero">
+            <nav>
+                <h2 class="logo"><a href="final.html"><span class="idi">Cam</span><span>Web2</span></a></h2>
+                <ul>
+                    <li><a href="final.html">Home</a></li>
+                    <li><a href="final.html#about">About Us</a></li>
+                    <li><a href="reagister.html">Register</a></li>
+                    <li><a href="more.html">More info</a></li>
+                    <li><a href="contect.html">Contact</a></li>
+                </ul>
+                <a href="https://www.facebook.com/mpwt.gov.kh?mibextid=JRoKGi" class="btn" target="_blank">Facebook</a>
+            </nav>
+        </div>
+        <div class="hero container">
+            <div>
+                <h1>&emsp;&emsp;Learn more about the<span>,</span></h1>
+                <h1><span>&emsp;&emsp;Driving Lesson</span> and do some<span> Test</span></h1>
+                <h1>&emsp;&emsp;Welcome!!</h1>
+                <p><br>&emsp;&emsp;&emsp;&emsp;<em>enjoy the lesson and game, good luck</em></p>
+                <a href="#lesson" type="button" class="cta">&emsp;&emsp;Learn Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="lesson" id="lesson">
+        <div class="main">
+            <img src="../Final_image/p11.png">
+            
+            <div class="lesson-txt">
+                <h2> Enjoy your lesson<span>.</span></h2><br>
+            </div>
+        </div>
+    </section>
+
+    <section class="book" id="book">
+        <div class="center-text">
+            <h2><span><br>Books.</span><br></h2>
+        </div>
+        <div class="book">
+
+                <div class="container">
+                    <div class="box">
+                        <img src="../Final_image/p7.png" alt="Image">
+                        <p>JUST FOR YOU - Driver's Handbook Study Guide - Knowledge and Road test
+                        </p>
+                        <button onclick="openFullPDF('../Final_image/driving1.pdf')">Open Full PDF</button>
+                    </div>
+                    <div class="box">
+                        <img src="../Final_image/p8.png" alt="Image">
+                        <p>Driver's Handbook - Newfoundland & Labrador</p>
+                        <button onclick="openFullPDF('../Final_image/driving2.pdf')">Open Full PDF</button>
+                    </div>
+                    <div class="box">
+                        <img src="../Final_image/p9.png" alt="Image">
+                        <p>Driver's Guide cars and light trucks - Alberta</p>
+                        <button onclick="openFullPDF('../Final_image/driving3.pdf')">Open Full PDF</button>
+                    </div>
+                </div>
+                
+                <script>
+                    function openFullPDF(pdfFile) {
+                        // Open the specified PDF file in a new tab
+                        window.open(pdfFile, '_blank');
+                    }
+                </script>
+                <br><br><br>
+        </div>
+    </section>
+    
+    <section class="game" id="game">
+        <div class="game-container">
+            <div class="lesson-txt">
+                <h2>Game</h2>
+                <button onclick="openGame()">Click here to do a simple driving test</button>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function openGame() {
+            // Open a new tab with the "game.html" file
+            window.open('game1.html', '_blank');
+        }
+    </script>
+
+    <section class="image" id="image">
+        <div class="video-container">
+            <br><br><br><br> 
+            <video src="../Final_image/driving.mp4" controls height="460px" alt="Video"></video>
+        </div>
+        <div class="image-container">
+            <br><br><br><br>
+            <img src="../Final_image/p12.png" height="460px" alt="Centered Image">
+        </div>
+    </section>
+
+
+    <section class="Audio" id="Audio">
+        <div class="My-image">
+            <h2><br><br><br><br><br><br>Enjoy!!!<br><br><br><br><br><br></h2>
+
+        </div>
+    </section>
+</body>
+</html> 
+
+
+

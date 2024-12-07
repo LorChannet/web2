@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game1</title>
+  <style>
+    .container {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .question {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .image {
+      margin-bottom: 20px;
+    }
+    .image img {
+      max-width: 300px; /* Set the maximum width of the image */
+      height: auto; /* Maintain aspect ratio */
+    }
+    .answers {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #playAgain {
+      display: none;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="question" id="question"></div>
+  <div class="image" id="imageQuestion" style="display: none;"></div>
+  <div class="answers">
+    <button id="answer1"></button>
+    <button id="answer2"></button>
+    <button id="answer3"></button>
+  </div>
+  <div id="result"></div>
+  <button id="playAgain">Play Again</button>
+</div>
+
+<script>
+  const questions = [
+    { 
+      question: "1. How many colors are in the traffic light?",
+      answers: ["a. 2", "b. 3", "c. 4"],
+      correctAnswer: 1
+    },
+    {
+      question: "2. What does the color Red on the traffic light mean?",
+      answers: ["a. Return", "b. Go", "c. Stop"],
+      correctAnswer: 2
+    },
+    {
+      question: "3. What age can you get a driver's license?",
+      answers: ["a. below 16 years old", "b. at least 18 years old", "c. no Limited Age"],
+      correctAnswer: 1
+    },
+    {
+      question: "4. Is it illegal to be on the phone while driving?",
+      answers: ["a. Yes.", "b. No.", "c. Maybe"],
+      correctAnswer: 0
+    },
+    {
+      imageQuestion: "tgame5.png",
+      question: "5. Name the road traffic signs.",
+      answers: ["a. Straight or left turn", "b. Left turn lane control", "c. Single lane roundabout"],
+      correctAnswer: 1
+    },
+    {
+      imageQuestion: "tgame6.png",
+      question: "6. Name the road traffic signs.",
+      answers: ["a. Pedestrians may be crossing.", "b. Winding road ahead", "c. Pedestrians may be crossing"],
+      correctAnswer: 1
+    },
+    {
+      imageQuestion: "tgame7.png",
+      question: "7. Name the road traffic signs.",
+      answers: ["a. RCMP or city police", "b. Accommodation", "c. Trailer campground"],
+      correctAnswer: 2
+    },
+    {
+      imageQuestion: "tgame8.png",
+      question: "8. Name the road traffic signs.",
+      answers: ["a. No right turn", "b. No left turn", "c. Do not pass"],
+      correctAnswer: 0
+    },
+    {
+      imageQuestion: "tgame9.png",
+      question: "9. Name the parking style?",
+      answers: ["a. Parallel parking", "b. Angle parking", "c. Back parking"],
+      correctAnswer: 0
+    },
+    {
+      imageQuestion: "tgame10.png",
+      question: "10. Name the parking style?",
+      answers: ["a. Parallel parking", "b. Angle parking", "c. Back parking"],
+      correctAnswer: 1
+    },
+  ];
+
+  let currentQuestion = 0;
+  let correctAnswers = 0;
+
+  const questionElement = document.getElementById("question");
+  const imageQuestionElement = document.getElementById("imageQuestion");
+  const answer1Element = document.getElementById("answer1");
+  const answer2Element = document.getElementById("answer2");
+  const answer3Element = document.getElementById("answer3");
+  const resultElement = document.getElementById("result");
+  const playAgainButton = document.getElementById("playAgain");
+
+  function showQuestion() {
+    const current = questions[currentQuestion];
+    if (current.imageQuestion) { // Checking for image question
+      imageQuestionElement.innerHTML = `
+        <img src="${current.imageQuestion}" alt="Question Image">
+        <p>${current.question}</p>
+      `;
+      questionElement.style.display = "none";
+      imageQuestionElement.style.display = "block";
+    } else {
+      questionElement.textContent = current.question;
+      questionElement.style.display = "block";
+      imageQuestionElement.style.display = "none";
+    }
+    answer1Element.textContent = current.answers[0];
+    answer2Element.textContent = current.answers[1];
+    answer3Element.textContent = current.answers[2];
+  }
+
+  function checkAnswer(answer) {
+    if (answer === questions[currentQuestion].correctAnswer) {
+      correctAnswers++;
+    }
+
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+      showQuestion();
+    } else {
+      resultElement.textContent = `You got ${correctAnswers} out of ${questions.length} correct.`;
+      playAgainButton.style.display = "block";
+    }
+  }
+
+  answer1Element.addEventListener("click", () => checkAnswer(0));
+  answer2Element.addEventListener("click", () => checkAnswer(1));
+  answer3Element.addEventListener("click", () => checkAnswer(2));
+
+  playAgainButton.addEventListener("click", () => {
+    currentQuestion = 0;
+    correctAnswers = 0;
+    showQuestion();
+    resultElement.textContent = "";
+    playAgainButton.style.display = "none";
+  });
+
+  showQuestion();
+</script>
+
+</body>
+</html>

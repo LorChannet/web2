@@ -1,0 +1,65 @@
+.cta {
+    margin-left: 80px;
+}
+
+.text-container h2 {
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
+.idi {
+    color: white;
+}
+
+.center-text{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.center-text h2{
+    color: white;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+
+/* Change the color of table headers */
+#reservationTable th {
+    color: black; /* Set the desired color */
+    background-color: white; /* Set the desired background color */
+}
+
+/* Change the color of table data */
+#reservationTable td {
+    color: #000000; /* Set the desired color */
+    background-color: #dddddd; /* Set the desired background color */
+}
+
+/* Adjust the layout of the form */
+#reagister-txt div {
+    margin-bottom: 10px; /* Add some space between each input field */
+}
+
+/* Style the label text */
+#reagister-txt label {
+    display: inline-block;
+    width: auto; /* Set the width to auto */
+    margin-right: 10px; /* Add some space between the label and input field */
+    font-weight: bold;
+}
+
+/* Style the input fields */
+#reagister-txt input[type="text"],
+#reagister-txt input[type="email"],
+#reagister-txt textarea {
+    width: calc(60% - 80px); /* Adjust the width of the input fields */
+}
+
+/* Adjust the width of the date of birth field */
+#reagister-txt input[type="date"] {
+    width: calc(25% - 80px); /* Adjust the width of the date of birth field */
+}

@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration: none; 
+}
+.container{
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10rem;  
+}
+#hero::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+    opacity: -7;
+    z-index: -1;
+}
+
+#hero h1{
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: white; 
+}
+
+#hero p{
+    display:block;
+    width: fit-content;
+    font-size: large;
+    position: relative;
+    color: white;
+}
+#hero .cta{
+    display: inline-block;
+    padding: 10px 30px;
+    color:white;
+    background-color: transparent;
+    border: 2px solid crimson ;
+    font-size: 2 rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+#hero .cta:hover{
+    color:white;
+    background-color:  crimson;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 45px;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+span{
+    color: cornflowerblue;
+}
+
+.logo{
+    color:white;
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+nav ul li a:hover{
+    color: #f9004d;
+    transition: .4s;
+}
+.btn{
+    background-color: rgb(80, 117, 185);
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    font-size: large;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform .4s;
+}
+.btn:hover{
+    transform: scale(1.2);
+}
+
+.bio{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #191919;
+}
+.bio img{
+    height: auto;
+    width: 430px;
+}
+.bio-text{
+    width: 550px;
+}
+
+.bio-text h2{
+    color: white;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.bio-text h5{
+    color: white;
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin-bottom: capitalize;
+}
+.bio-text p{
+    color: papayawhip;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+.main{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.register{
+    background-color: #191919;
+}
+.register-txt {
+    width: 800px;
+    color: white;
+    font-size: 18px; 
+}
+
+.lesson{
+    width: 100%;
+    padding: 100px 0px;
+    background-color: #191919;
+}
+.lesson img{
+    height: auto;
+    width: 430px;
+}
+.lesson-txt{
+    width: 550px;
+}
+
+.lesson-txt h2{
+    color: white;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.lesson-text h5{
+    color: white;
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin-bottom: capitalize;
+}
+.lesson-text p{
+    color: papayawhip;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 18px;
+    margin-bottom: 45px;
+}
+
+#reservationTable th {
+    font-size: 14px; /* Set the desired font size */
+}
+
+.photos {
+    background: dark blue;
+}
+
+.main-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5 rem;
+}
+.row-text h4{
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: papayawhip;
+}
+
+.center-text{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.register-txt h3 {
+    font-size: 16px; /* Set the desired font size */
+}
+.register-txt p {
+    font-size: 16px; /* Set the desired font size */
+}
+
+.My-Journey-with-AUPP{
+    border: 5px outset black;
+    background-color: black;    
+    text-align: center;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.photo-content {
+    display: flex;
+    justify-content: center;
+
+    height: 80vh; /* Set height to fill the viewport */
+}
+
+.photo-content img {
+    max-height: 100%; /* Ensure the image does not exceed the height of the container */
+}
+
+
+.game-text{
+    text-size-adjust: 20px;
+    width: 10px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.game-text h2{
+    color: white;
+    font-size: 75px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.game {
+    background-color: orange;
+    color: white;
+    padding: 100px 0;
+    text-align: center; 
+}
+
+
+.game-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; 
+    background-color: orange;
+
+}
+
+.game-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.My-image {
+    text-align: center;
+}
+
+
+.image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-container {
+    flex: 1;
+    padding-right: 20px; /* Adjust as needed for spacing */
+    padding-left: 20px; /* Add padding to the left */
+    margin-right: 20px; /* Add margin to the right for spacing between video and image */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); /* Shadow added to top of video */
+}
+
+.video-container video {
+    max-width: 100%; /* Set the maximum width of the video */
+    height: auto; /* Let the height adjust proportionally */
+}
+
+.image-container {
+    flex: 1;
+    padding-left: 20px; /* Adjust as needed for spacing */
+}
+
+
+
